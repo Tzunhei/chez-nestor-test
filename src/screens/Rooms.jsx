@@ -4,8 +4,8 @@ import RoomTable from "../components/RoomTable";
 const Rooms = ({ rooms }) => {
   return (
     <div>
-      <h1>Page chambres</h1>
-      <RoomTable />
+      <h1>Rooms page</h1>
+      <RoomTable rooms={rooms} />
     </div>
   );
 };
