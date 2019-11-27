@@ -14,6 +14,8 @@ const RoomTable = ({ rooms }) => {
       {rooms.map(room => {
         return (
           <RoomList
+            key={room.id}
+            id={room.id}
             name={room.name}
             address={room.address}
             zip={room.zip}

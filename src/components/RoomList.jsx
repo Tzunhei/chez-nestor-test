@@ -1,6 +1,7 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
-const RoomList = ({ name, address, zip, city, status }) => {
+const RoomList = ({ id, name, address, zip, city, status }) => {
   return (
     <tr>
       <td>{name}</td>
@@ -8,6 +9,8 @@ const RoomList = ({ name, address, zip, city, status }) => {
       <td>{zip}</td>
       <td>{city}</td>
       <td>{status}</td>
+      <NavLink to={`/rooms/${id}`}>Room details</NavLink>
+      {/* <NavLink>Client details</NavLink> */}
     </tr>
   );
 };
