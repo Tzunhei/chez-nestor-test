@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
 
-import Home from "./screens/Home";
 import Rooms from "./screens/Rooms";
-import Customers from "./screens/Customers";
+import Room from "./screens/Room";
+import Customer from "./screens/Customer";
 import NotFound from "./screens/NotFound";
 
 const App = () => {
@@ -39,9 +39,9 @@ const App = () => {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/rooms" component={Rooms} />
-          <Route path="/customers" component={Customers} />
+          <Route exact path="/" render={() => <Rooms rooms={rooms} />} />
+          <Route path="/rooms/:id" component={Room} />
+          <Route path="/customers/:id" component={Customer} />
           <NotFound />
         </Switch>
       </Router>

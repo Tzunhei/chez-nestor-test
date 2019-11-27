@@ -1,11 +1,11 @@
 import React from "react";
-import NavBar from "../components/NavBar";
+import RoomTable from "../components/RoomTable";
 
-const Rooms = () => {
+const Rooms = ({ rooms }) => {
   return (
     <div>
-      <NavBar />
-      <h1>Rooms page</h1>
+      <h1>Page chambres</h1>
+      <RoomTable />
     </div>
   );
 };
