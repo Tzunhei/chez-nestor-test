@@ -14,6 +14,27 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isContentLoaded, setIsContentLoaded] = useState();
 
+  const renderScreenSingleRoom = props => {
+    const { roomId } = props.match.params;
+    const singleRoom = rooms.filter(room => room.id === roomId)[0];
+    let customerData;
+    if (singleRoom && singleRoom.status === "occupied") {
+      customerData = customers.filter(
+        customer => singleRoom.id === customer.roomId
+      );
+    }
+    return (
+      <ScreenSingleRoom roomData={singleRoom} customerData={customerData[0]} />
+    );
+  };
+
+  const renderScreenCustomer = props => {
+    const { customerId } = props.match.params;
+    const customer = customers.filter(item => item.id === customerId)[0];
+    const roomData = rooms.filter(room => room.id === customer.roomId)[0];
+    return <ScreenCustomer customerData={customer} roomData={roomData} />;
+  };
+
   const fetchData = async () => {
     const urlRooms = "https://technical-test-api.herokuapp.com/rooms";
     const urlCustomers = "https://technical-test-api.herokuapp.com/clients";
@@ -45,26 +66,17 @@ const App = () => {
             render={() => <ScreenAllRooms rooms={rooms} />}
           />
           <Route
-            path="/rooms/:id"
-            component={props => {
-              const roomId = props.match.params.id;
-              const singleRoom = rooms.filter(room => room.id === roomId)[0];
-              let customerData;
-              if (singleRoom && singleRoom.status === "occupied") {
-                customerData = customers.filter(
-                  customer => singleRoom.id === customer.roomId
-                );
-              }
-              console.log(singleRoom);
-              return (
-                <ScreenSingleRoom
-                  roomData={singleRoom}
-                  customerData={customerData[0]}
-                />
-              );
+            path="/rooms/:roomId"
+            render={props => {
+              return renderScreenSingleRoom(props, rooms, customers);
             }}
           />
-          <Route path="/customers/:id" component={ScreenCustomer} />
+          <Route
+            path="/customers/:customerId"
+            render={props => {
+              return renderScreenCustomer(props, customers, rooms);
+            }}
+          />
           <NotFound />
         </Switch>
       </Router>
