@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
 
-import Rooms from "./screens/Rooms";
-import Room from "./screens/Room";
-import Customer from "./screens/Customer";
+import ScreenAllRooms from "./screens/ScreenAllRooms";
+import ScreenSingleRoom from "./screens/ScreenSingleRoom";
+import ScreenCustomer from "./screens/ScreenCustomer";
 import NotFound from "./screens/NotFound";
 
 const App = () => {
@@ -39,9 +39,20 @@ const App = () => {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/" render={() => <Rooms rooms={rooms} />} />
-          <Route path="/rooms/:id" component={Room} />
-          <Route path="/customers/:id" component={Customer} />
+          <Route
+            exact
+            path="/"
+            render={() => <ScreenAllRooms rooms={rooms} />}
+          />
+          <Route
+            path="/rooms/:id"
+            component={props => {
+              const roomId = props.match.params.id;
+              const singleRoom = rooms.filter(room => room.id === roomId)[0];
+              return <ScreenSingleRoom roomData={singleRoom} />;
+            }}
+          />
+          <Route path="/customers/:id" component={ScreenCustomer} />
           <NotFound />
         </Switch>
       </Router>

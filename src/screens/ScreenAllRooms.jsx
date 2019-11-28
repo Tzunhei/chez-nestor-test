@@ -1,7 +1,7 @@
 import React from "react";
-import RoomTable from "../components/RoomTable";
+import RoomTable from "../components/Rooms/RoomTable";
 
-const ScreenRooms = ({ rooms }) => {
+const ScreenAllRooms = ({ rooms }) => {
   return (
     <div>
       <h1>Rooms page</h1>
@@ -10,4 +10,4 @@ const ScreenRooms = ({ rooms }) => {
   );
 };
 
-export default ScreenRooms;
+export default ScreenAllRooms;
