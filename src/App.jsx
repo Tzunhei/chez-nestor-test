@@ -49,7 +49,19 @@ const App = () => {
             component={props => {
               const roomId = props.match.params.id;
               const singleRoom = rooms.filter(room => room.id === roomId)[0];
-              return <ScreenSingleRoom roomData={singleRoom} />;
+              let customerData;
+              if (singleRoom && singleRoom.status === "occupied") {
+                customerData = customers.filter(
+                  customer => singleRoom.id === customer.roomId
+                );
+              }
+              console.log(singleRoom);
+              return (
+                <ScreenSingleRoom
+                  roomData={singleRoom}
+                  customerData={customerData[0]}
+                />
+              );
             }}
           />
           <Route path="/customers/:id" component={ScreenCustomer} />

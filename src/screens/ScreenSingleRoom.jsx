@@ -1,10 +1,10 @@
 import React from "react";
 import Room from "../components/Rooms/Room";
 
-const ScreenSingleRoom = ({ roomData }) => {
+const ScreenSingleRoom = ({ roomData, customerData }) => {
   return (
     <div>
-      <Room roomData={roomData} />
+      <Room roomData={roomData} customerData={customerData} />
     </div>
   );
 };

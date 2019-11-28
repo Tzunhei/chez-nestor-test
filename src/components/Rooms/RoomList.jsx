@@ -12,7 +12,6 @@ const RoomList = ({ id, name, address, zip, city, status }) => {
       <td>
         <NavLink to={`/rooms/${id}`}>Room details</NavLink>
       </td>
-      {/* <NavLink>Client details</NavLink> */}
     </tr>
   );
 };
