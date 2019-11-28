@@ -1,6 +1,6 @@
 import React from "react";
 
-const Room = () => {
+const ScreenRoom = () => {
   return (
     <div>
       <h1>Room page</h1>
@@ -8,4 +8,4 @@ const Room = () => {
   );
 };
 
-export default Room;
+export default ScreenRoom;

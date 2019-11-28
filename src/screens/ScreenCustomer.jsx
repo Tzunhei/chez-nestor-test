@@ -1,6 +1,6 @@
 import React from "react";
 
-const Customer = () => {
+const ScreenCustomer = () => {
   return (
     <div>
       <h1>Customer page</h1>
@@ -8,4 +8,4 @@ const Customer = () => {
   );
 };
 
-export default Customer;
+export default ScreenCustomer;
