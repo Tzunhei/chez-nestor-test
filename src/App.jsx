@@ -8,10 +8,12 @@ import ScreenAllRooms from "./screens/ScreenAllRooms";
 import ScreenSingleRoom from "./screens/ScreenSingleRoom";
 import ScreenSingleCustomer from "./screens/ScreenSingleCustomer";
 import NotFound from "./screens/NotFound";
+import Loading from "./screens/Loading";
+import ScreenAllCustomers from "./screens/ScreenAllCustomers";
 
 const App = () => {
-  const [rooms, setRooms] = useState([]);
-  const [customers, setCustomers] = useState([]);
+  const [rooms, setRooms] = useState(null);
+  const [customers, setCustomers] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isContentLoaded, setIsContentLoaded] = useState();
 
@@ -60,7 +62,9 @@ const App = () => {
     fetchData();
   }, []);
 
-  return (
+  return !isContentLoaded ? (
+    <Loading />
+  ) : (
     <div className="App">
       <Router>
         <Header />
@@ -75,6 +79,11 @@ const App = () => {
             render={props => {
               return renderScreenSingleRoom(props, rooms, customers);
             }}
+          />
+          <Route
+            exact
+            path="/customers"
+            render={() => <ScreenAllCustomers customersData={customers} />}
           />
           <Route
             path="/customers/:customerId"

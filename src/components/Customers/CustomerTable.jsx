@@ -1,6 +1,6 @@
 import React from "react";
 
-const CustomerTable = () => {
+const CustomerTable = ({customersData}) => {
   return (
     <table>
       <thead>
@@ -11,7 +11,16 @@ const CustomerTable = () => {
         <th>Birth Date</th>
         <th>Email</th>
       </thead>
-      <tbody />
+      <tbody>
+        {customersData.map(customer => {
+          <td>{customer.name}</td>
+          <td>{customer.nationality}</td>
+          <td>{customer.phone}</td>
+          <td>{customer.status}</td>
+          <td>{customer.birthDate}</td>
+          <td>{customer.email}</td>
+        })}
+      </tbody>
     </table>
   );
 };

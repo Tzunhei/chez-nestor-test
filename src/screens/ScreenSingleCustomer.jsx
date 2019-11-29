@@ -3,10 +3,12 @@ import Customer from "../components/Customers/Customer";
 
 const ScreenSingleCustomer = ({ customerData, roomData }) => {
   return (
-    <div>
-      <h1>Customer page</h1>
-      <Customer customerData={customerData} roomData={roomData} />
-    </div>
+    customerData && (
+      <div>
+        <h1>Customer page</h1>
+        <Customer customerData={customerData} roomData={roomData} />
+      </div>
+    )
   );
 };
 

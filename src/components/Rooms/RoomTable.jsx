@@ -2,6 +2,7 @@ import React from "react";
 import RoomList from "./RoomList";
 
 const RoomTable = ({ rooms }) => {
+  console.log(rooms);
   return (
     <table>
       <thead>
