@@ -71,7 +71,7 @@ const App = () => {
         <Switch>
           <Route
             exact
-            path="/"
+            path={["/", "/rooms"]}
             render={() => <ScreenAllRooms rooms={rooms} />}
           />
           <Route

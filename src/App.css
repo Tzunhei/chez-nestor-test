@@ -1,9 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Arvo|Noto+Sans&display=swap");
+
 html,
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: #ccdad1;
+}
+
+h1 {
+  font-family: "Arvo", Arial, Helvetica, sans-serif;
+}
+
+p,
+a,
+li,
+th,
+td {
+  font-family: "Noto Sans", Arial, Helvetica, sans-serif;
 }
 
 li {
@@ -15,13 +29,29 @@ a {
   color: inherit;
 }
 
+/* Table styles */
+
 table {
   margin: 2rem auto;
   background-color: #5b85aa;
+  border-collapse: collapse;
 }
 
 th,
 td {
   padding: 1em;
   text-align: center;
+}
+
+th {
+  background-color: #414770;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #faf2a1;
+}
+
+tr:nth-child(odd) {
+  background-color: #5b85aa;
 }

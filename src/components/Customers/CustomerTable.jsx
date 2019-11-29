@@ -5,12 +5,12 @@ const CustomerTable = ({ customersData }) => {
     <table>
       <thead>
         <tr>
-          <td>Name</td>
-          <td>Nationality</td>
-          <td>Phone</td>
-          <td>Birth Date</td>
-          <td>Email</td>
-          <td>Status</td>
+          <th>Name</th>
+          <th>Nationality</th>
+          <th>Phone</th>
+          <th>Birth Date</th>
+          <th>Email</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>

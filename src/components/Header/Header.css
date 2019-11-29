@@ -2,6 +2,7 @@
   background-color: #414770;
   padding: 1em;
   text-align: center;
+  color: #fff;
 }
 
 .header-title h1 {
@@ -15,5 +16,10 @@
 
 .header-link {
   padding: 1em 2em;
-  font-size: 1.2rem;
+  background-color: #e7ecef;
+  color: #000;
+}
+
+.header-link-active {
+  background-color: #f0cf65;
 }

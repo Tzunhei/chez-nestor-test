@@ -9,10 +9,18 @@ const Header = () => {
         <h1>Chez Nestor</h1>
       </div>
       <nav className="header-nav">
-        <NavLink to="/" className="header-link">
+        <NavLink
+          to="/rooms"
+          className="header-link"
+          activeClassName="header-link-active"
+        >
           Rooms
         </NavLink>
-        <NavLink to="/customers" className="header-link">
+        <NavLink
+          to="/customers"
+          className="header-link"
+          activeClassName="header-link-active"
+        >
           Customers
         </NavLink>
       </nav>

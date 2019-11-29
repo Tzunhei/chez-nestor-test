@@ -12,6 +12,7 @@ const RoomTable = ({ rooms }) => {
           <th>Zip Code</th>
           <th>City</th>
           <th>Status</th>
+          <th />
         </tr>
       </thead>
       <tbody>
