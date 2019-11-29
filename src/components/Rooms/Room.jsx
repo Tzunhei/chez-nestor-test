@@ -1,11 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./Room.css";
 
 const Room = ({ roomData, customerData }) => {
   const { name, address, city, zip, status } = roomData;
   return (
     roomData && (
-      <>
+      <div className="room-container">
         <h1>{name}</h1>
         <ul>
           <li>{address}</li>
@@ -20,7 +21,7 @@ const Room = ({ roomData, customerData }) => {
         ) : (
           <p>Room currently available</p>
         )}
-      </>
+      </div>
     )
   );
 };

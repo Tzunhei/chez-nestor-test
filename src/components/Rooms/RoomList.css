@@ -1,0 +1,8 @@
+.room-btn {
+  background-color: #c5cae9;
+  transition: background-color 0.3s ease-in;
+}
+
+.room-btn:hover {
+  background-color: #7986cb;
+}

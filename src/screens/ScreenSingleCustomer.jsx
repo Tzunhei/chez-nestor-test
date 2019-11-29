@@ -5,7 +5,6 @@ const ScreenSingleCustomer = ({ customerData, roomData }) => {
   return (
     customerData && (
       <div>
-        <h1>Customer page</h1>
         <Customer customerData={customerData} roomData={roomData} />
       </div>
     )

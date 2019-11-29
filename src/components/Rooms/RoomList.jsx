@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./RoomList.css";
 
 const RoomList = ({ id, name, address, zip, city, status }) => {
   return (
@@ -9,7 +10,7 @@ const RoomList = ({ id, name, address, zip, city, status }) => {
       <td>{zip}</td>
       <td>{city}</td>
       <td>{status}</td>
-      <td>
+      <td className="room-btn">
         <NavLink to={`/rooms/${id}`}>Room details</NavLink>
       </td>
     </tr>

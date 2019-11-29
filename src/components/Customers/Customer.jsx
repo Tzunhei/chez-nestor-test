@@ -1,4 +1,5 @@
 import React from "react";
+import "./Customer.css";
 
 const Customer = ({ customerData, roomData }) => {
   const {
@@ -11,7 +12,7 @@ const Customer = ({ customerData, roomData }) => {
   } = customerData;
   const { name: roomName, address, city, zip } = roomData;
   return (
-    <>
+    <div className="customer-container">
       <div>
         <h1>{customerName}</h1>
         <ul>
@@ -30,7 +31,7 @@ const Customer = ({ customerData, roomData }) => {
           <li>{zip}</li>
         </ul>
       </div>
-    </>
+    </div>
   );
 };
 
