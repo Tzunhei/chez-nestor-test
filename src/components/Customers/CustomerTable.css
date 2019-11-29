@@ -1,0 +1,11 @@
+.status-booked {
+  background-color: #42a5f5;
+}
+
+.status-checked-in {
+  background-color: #ffee58;
+}
+
+.status-checked-out {
+  background-color: #9ccc65;
+}

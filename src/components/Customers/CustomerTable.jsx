@@ -1,7 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./CustomerTable.css";
 
 const CustomerTable = ({ customersData }) => {
+  const getCustomerStatusCellClassName = status => {
+    if (status === "booked") {
+      return "status-booked";
+    }
+    if (status === "checked-in") {
+      return "status-checked-in";
+    }
+    return "status-checked-out";
+  };
+
   return (
     <table>
       <thead>
@@ -24,7 +35,9 @@ const CustomerTable = ({ customersData }) => {
               <td>{customer.nationality}</td>
               <td>{customer.email}</td>
               <td>{customer.phone}</td>
-              <td>{customer.status}</td>
+              <td className={getCustomerStatusCellClassName(customer.status)}>
+                {customer.status}
+              </td>
               <td className="table-details-btn">
                 <NavLink to={`/customers/${customer.id}`}>
                   Client details
