@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 import "./CustomerTable.css";
 
 const CustomerTable = ({ customersData }) => {
@@ -49,6 +50,16 @@ const CustomerTable = ({ customersData }) => {
       </tbody>
     </table>
   );
+};
+
+CustomerTable.propTypes = {
+  customersData: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    birthDate: PropTypes.string.isRequired,
+    nationality: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired
+  }).isRequired
 };
 
 export default CustomerTable;

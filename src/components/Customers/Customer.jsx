@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./Customer.css";
 
 const Customer = ({ customerData, roomData }) => {
@@ -39,6 +40,24 @@ const Customer = ({ customerData, roomData }) => {
       </div>
     </div>
   );
+};
+
+Customer.propTypes = {
+  customerData: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    birthDate: PropTypes.string.isRequired,
+    nationality: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired
+  }).isRequired,
+  roomData: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+    zip: PropTypes.number.isRequired,
+    city: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired
+  }).isRequired
 };
 
 export default Customer;

@@ -7,8 +7,8 @@ import Header from "./components/Header/Header";
 import ScreenAllRooms from "./screens/ScreenAllRooms";
 import ScreenSingleRoom from "./screens/ScreenSingleRoom";
 import ScreenSingleCustomer from "./screens/ScreenSingleCustomer";
-import NotFound from "./screens/NotFound";
-import Loading from "./screens/Loading";
+import NotFound from "./components/NotFound/NotFound";
+import Loading from "./components/Loading/Loading";
 import ScreenAllCustomers from "./screens/ScreenAllCustomers";
 
 const App = () => {
