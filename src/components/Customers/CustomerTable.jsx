@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const CustomerTable = ({ customersData }) => {
   return (
@@ -11,6 +12,7 @@ const CustomerTable = ({ customersData }) => {
           <th>Birth Date</th>
           <th>Email</th>
           <th>Status</th>
+          <th />
         </tr>
       </thead>
       <tbody>
@@ -23,6 +25,11 @@ const CustomerTable = ({ customersData }) => {
               <td>{customer.email}</td>
               <td>{customer.phone}</td>
               <td>{customer.status}</td>
+              <td className="table-details-btn">
+                <NavLink to={`/customers/${customer.id}`}>
+                  Client details
+                </NavLink>
+              </td>
             </tr>
           );
         })}

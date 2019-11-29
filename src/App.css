@@ -60,3 +60,13 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
   background-color: #fafafa;
 }
+
+.table-details-btn {
+  background-color: #c5cae9;
+  text-decoration: underline;
+  transition: background-color 0.3s ease-in;
+}
+
+.table-details-btn:hover {
+  background-color: #7986cb;
+}

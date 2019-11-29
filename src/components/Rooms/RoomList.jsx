@@ -14,7 +14,7 @@ const RoomList = ({ id, name, address, zip, city, status }) => {
       >
         {status}
       </td>
-      <td className="room-btn">
+      <td className="table-details-btn">
         <NavLink to={`/rooms/${id}`}>Room details</NavLink>
       </td>
     </tr>
