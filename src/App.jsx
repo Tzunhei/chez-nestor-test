@@ -24,7 +24,10 @@ const App = () => {
       );
     }
     return (
-      <ScreenSingleRoom roomData={singleRoom} customerData={customerData[0]} />
+      <ScreenSingleRoom
+        roomData={singleRoom}
+        customerData={customerData ? customerData[0] : null}
+      />
     );
   };
 
