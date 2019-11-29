@@ -9,18 +9,22 @@ const Room = ({ roomData, customerData }) => {
       <div className="room-container">
         <h1>{name}</h1>
         <ul>
-          <li>{address}</li>
-          <li>{city}</li>
-          <li>{zip}</li>
-          <li>{status}</li>
+          <li>{`Address: ${address}`}</li>
+          <li>{`City: ${city}`}</li>
+          <li>{`Zip: ${zip}`}</li>
+          <li>
+            {status === "occupied" ? (
+              <NavLink
+                to={`/customers/${customerData.id}`}
+                className="customer-name"
+              >
+                {`Currently occupied by ${customerData.name}`}
+              </NavLink>
+            ) : (
+              <p>Room currently available</p>
+            )}
+          </li>
         </ul>
-        {status === "occupied" ? (
-          <NavLink to={`/customers/${customerData.id}`}>
-            {`Currently occupied by ${customerData.name}`}
-          </NavLink>
-        ) : (
-          <p>Room currently available</p>
-        )}
       </div>
     )
   );

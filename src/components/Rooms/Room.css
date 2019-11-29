@@ -5,3 +5,7 @@
   min-width: 300px;
   width: 50%;
 }
+
+.customer-name {
+  text-decoration: underline;
+}
