@@ -9,7 +9,11 @@ const RoomList = ({ id, name, address, zip, city, status }) => {
       <td>{address}</td>
       <td>{zip}</td>
       <td>{city}</td>
-      <td>{status}</td>
+      <td
+        className={status === "occupied" ? "occupied-cell" : "available-cell"}
+      >
+        {status}
+      </td>
       <td className="room-btn">
         <NavLink to={`/rooms/${id}`}>Room details</NavLink>
       </td>

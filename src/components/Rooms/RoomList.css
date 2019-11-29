@@ -6,3 +6,11 @@
 .room-btn:hover {
   background-color: #7986cb;
 }
+
+.occupied-cell {
+  background-color: #ef5350;
+}
+
+.available-cell {
+  background-color: #66bb6a;
+}
