@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const RoomList = ({ id, name, address, zip, city, status }) => {
   return (
-    <tr>
+    <tr className="table-row">
       <td>{name}</td>
       <td>{address}</td>
       <td>{zip}</td>

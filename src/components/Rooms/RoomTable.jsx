@@ -1,11 +1,12 @@
 import React from "react";
 import RoomList from "./RoomList";
+import "./RoomTable.css";
 
 const RoomTable = ({ rooms }) => {
   return (
-    <table>
+    <table className="table-container">
       <thead>
-        <tr>
+        <tr className="table-row">
           <th>Name</th>
           <th>Address</th>
           <th>Zip Code</th>

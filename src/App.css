@@ -1,0 +1,27 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #ccdad1;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+table {
+  margin: 2rem auto;
+  background-color: #5b85aa;
+}
+
+th,
+td {
+  padding: 1em;
+  text-align: center;
+}

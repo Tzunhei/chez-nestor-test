@@ -1,0 +1,19 @@
+.header-container {
+  background-color: #414770;
+  padding: 1em;
+  text-align: center;
+}
+
+.header-title h1 {
+  margin: 0;
+  font-size: 3rem;
+}
+
+.header-nav {
+  margin: 2rem 0;
+}
+
+.header-link {
+  padding: 1em 2em;
+  font-size: 1.2rem;
+}
