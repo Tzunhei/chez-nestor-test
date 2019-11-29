@@ -8,9 +8,9 @@ const CustomerTable = ({ customersData }) => {
           <td>Name</td>
           <td>Nationality</td>
           <td>Phone</td>
-          <td>Status</td>
-          <td>Birtd Date</td>
+          <td>Birth Date</td>
           <td>Email</td>
+          <td>Status</td>
         </tr>
       </thead>
       <tbody>
@@ -18,11 +18,11 @@ const CustomerTable = ({ customersData }) => {
           return (
             <tr key={customer.id}>
               <td>{customer.name}</td>
+              <td>{customer.birthDate}</td>
               <td>{customer.nationality}</td>
+              <td>{customer.email}</td>
               <td>{customer.phone}</td>
               <td>{customer.status}</td>
-              <td>{customer.birthDate}</td>
-              <td>{customer.email}</td>
             </tr>
           );
         })}
