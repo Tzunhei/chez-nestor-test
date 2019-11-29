@@ -1,5 +1,5 @@
 import React from "react";
-import CustomerTable from "../components/Customers/Customer";
+import CustomerTable from "../components/Customers/CustomerTable";
 
 const ScreenAllCustomers = ({ customersData }) => {
   return (
