@@ -8,15 +8,19 @@ body {
   background-color: #ccdad1;
 }
 
+h1 {
+  letter-spacing: 2px;
+}
+
 h1,
-h2 {
+h2,
+th {
   font-family: "Arvo", Arial, Helvetica, sans-serif;
 }
 
 p,
 a,
 li,
-th,
 td {
   font-family: "Noto Sans", Arial, Helvetica, sans-serif;
 }
