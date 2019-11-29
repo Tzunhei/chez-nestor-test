@@ -1,7 +1,7 @@
 import React from "react";
 import Customer from "../components/Customers/Customer";
 
-const ScreenCustomer = ({ customerData, roomData }) => {
+const ScreenSingleCustomer = ({ customerData, roomData }) => {
   return (
     <div>
       <h1>Customer page</h1>
@@ -10,4 +10,4 @@ const ScreenCustomer = ({ customerData, roomData }) => {
   );
 };
 
-export default ScreenCustomer;
+export default ScreenSingleCustomer;

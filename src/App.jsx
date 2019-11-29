@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
 
+import Header from "./components/Header/Header";
 import ScreenAllRooms from "./screens/ScreenAllRooms";
 import ScreenSingleRoom from "./screens/ScreenSingleRoom";
-import ScreenCustomer from "./screens/ScreenCustomer";
+import ScreenSingleCustomer from "./screens/ScreenSingleCustomer";
 import NotFound from "./screens/NotFound";
 
 const App = () => {
@@ -31,11 +32,11 @@ const App = () => {
     );
   };
 
-  const renderScreenCustomer = props => {
+  const renderScreenSingleCustomer = props => {
     const { customerId } = props.match.params;
     const customer = customers.filter(item => item.id === customerId)[0];
     const roomData = rooms.filter(room => room.id === customer.roomId)[0];
-    return <ScreenCustomer customerData={customer} roomData={roomData} />;
+    return <ScreenSingleCustomer customerData={customer} roomData={roomData} />;
   };
 
   const fetchData = async () => {
@@ -62,6 +63,7 @@ const App = () => {
   return (
     <div className="App">
       <Router>
+        <Header />
         <Switch>
           <Route
             exact
@@ -77,7 +79,7 @@ const App = () => {
           <Route
             path="/customers/:customerId"
             render={props => {
-              return renderScreenCustomer(props, customers, rooms);
+              return renderScreenSingleCustomer(props, customers, rooms);
             }}
           />
           <NotFound />
