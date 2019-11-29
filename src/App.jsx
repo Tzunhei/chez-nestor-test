@@ -14,7 +14,7 @@ import ScreenAllCustomers from "./screens/ScreenAllCustomers";
 const App = () => {
   const [rooms, setRooms] = useState(null);
   const [customers, setCustomers] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState();
   const [isContentLoaded, setIsContentLoaded] = useState();
 
   const renderScreenSingleRoom = props => {
@@ -62,37 +62,39 @@ const App = () => {
     fetchData();
   }, []);
 
-  return !isContentLoaded ? (
-    <Loading />
-  ) : (
+  return (
     <div className="App">
       <Router>
         <Header />
-        <Switch>
-          <Route
-            exact
-            path={["/", "/rooms"]}
-            render={() => <ScreenAllRooms rooms={rooms} />}
-          />
-          <Route
-            path="/rooms/:roomId"
-            render={props => {
-              return renderScreenSingleRoom(props, rooms, customers);
-            }}
-          />
-          <Route
-            exact
-            path="/customers"
-            render={() => <ScreenAllCustomers customersData={customers} />}
-          />
-          <Route
-            path="/customers/:customerId"
-            render={props => {
-              return renderScreenSingleCustomer(props, customers, rooms);
-            }}
-          />
-          <NotFound />
-        </Switch>
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <Switch>
+            <Route
+              exact
+              path={["/", "/rooms"]}
+              render={() => <ScreenAllRooms rooms={rooms} />}
+            />
+            <Route
+              path="/rooms/:roomId"
+              render={props => {
+                return renderScreenSingleRoom(props, rooms, customers);
+              }}
+            />
+            <Route
+              exact
+              path="/customers"
+              render={() => <ScreenAllCustomers customersData={customers} />}
+            />
+            <Route
+              path="/customers/:customerId"
+              render={props => {
+                return renderScreenSingleCustomer(props, customers, rooms);
+              }}
+            />
+            <NotFound />
+          </Switch>
+        )}
       </Router>
     </div>
   );
