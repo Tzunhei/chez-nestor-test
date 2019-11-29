@@ -4,4 +4,11 @@
   background-color: #fff;
   min-width: 300px;
   width: 50%;
+  text-align: center;
+}
+
+.customer-infos-container {
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
 }

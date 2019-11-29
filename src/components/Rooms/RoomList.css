@@ -1,5 +1,6 @@
 .room-btn {
   background-color: #c5cae9;
+  text-decoration: underline;
   transition: background-color 0.3s ease-in;
 }
 

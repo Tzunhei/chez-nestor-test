@@ -14,12 +14,15 @@ const Room = ({ roomData, customerData }) => {
           <li>{`Zip: ${zip}`}</li>
           <li>
             {status === "occupied" ? (
-              <NavLink
-                to={`/customers/${customerData.id}`}
-                className="customer-name"
-              >
-                {`Currently occupied by ${customerData.name}`}
-              </NavLink>
+              <>
+                <p>{`Currently occupied by ${customerData.name}`}</p>
+                <NavLink
+                  to={`/customers/${customerData.id}`}
+                  className="customer-link"
+                >
+                  Go to customer page for details
+                </NavLink>
+              </>
             ) : (
               <p>Room currently available</p>
             )}
