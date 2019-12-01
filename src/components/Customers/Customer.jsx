@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Customer.css";
 
+import HomeBtn from "../HomeBtn";
+
 const Customer = ({ customerData, roomData }) => {
   const {
     name: customerName,
@@ -38,6 +40,7 @@ const Customer = ({ customerData, roomData }) => {
           </div>
         ) : null}
       </div>
+      <HomeBtn />
     </div>
   );
 };

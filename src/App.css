@@ -40,6 +40,7 @@ table {
   margin: 2rem auto;
   background-color: #5b85aa;
   border-collapse: collapse;
+  box-shadow: 0 0 10px 0 #757575;
 }
 
 th,
@@ -69,4 +70,15 @@ tr:nth-child(odd) {
 
 .table-details-btn:hover {
   background-color: #7986cb;
+}
+
+/* btn styles */
+
+.link-btn {
+  text-decoration: underline;
+  transition: color 0.3s ease-out;
+}
+
+.link-btn:hover {
+  color: #414770;
 }
