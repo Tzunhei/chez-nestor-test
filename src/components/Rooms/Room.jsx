@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Room.css";
 
+import HomeBtn from "../HomeBtn";
+
 const Room = ({ roomData, customerData }) => {
   const { name, address, city, zip, status } = roomData;
   return (
@@ -18,7 +20,7 @@ const Room = ({ roomData, customerData }) => {
                 <p>{`Currently occupied by ${customerData.name}`}</p>
                 <NavLink
                   to={`/customers/${customerData.id}`}
-                  className="customer-link"
+                  className="link-btn"
                 >
                   Go to customer page for details
                 </NavLink>
@@ -28,6 +30,7 @@ const Room = ({ roomData, customerData }) => {
             )}
           </li>
         </ul>
+        <HomeBtn />
       </div>
     )
   );
